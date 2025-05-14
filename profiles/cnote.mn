@@ -1,0 +1,7 @@
+COIN_NAME="cnote"
+COIN_PATH="/usr/local/bin/"
+COIN_DAEMON="cnoted"
+COIN_CLI="cnote-cli"
+COIN_FOLDER="/root/.cnote"
+COIN_CONFIG="cnote.conf"
+COIN_SERVICE="cnote.service"
