@@ -2,14 +2,14 @@
 
 A script which is easily create Multiple Masternodes of the same coin in the same VPS.
 
-First of all you have to start one masternode using <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN.sh">CNOTE-MN.sh</a> script that is your MainNode.
+First of all you have to start one masternode using <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN-v2.sh">CNOTE-MN-v2.sh</a> script that is your MainNode.
 
-# Guide of use CNOTE-MN.sh for MainNode:
+# Guide of use CNOTE-MN-v2.sh for MainNode:
 
 ```
-wget -q https://raw.githubusercontent.com/cnote-chain/CNOTE-MN/main/CNOTE-MN.sh
-sudo chmod +x CNOTE-MN.sh
-./CNOTE-MN.sh
+wget -q https://raw.githubusercontent.com/cnote-chain/CNOTE-MN/main/CNOTE-MN-v2.sh
+sudo chmod +x CNOTE-MN-v2.sh
+./CNOTE-MN-v2.sh
 ```
 ***
 
@@ -71,7 +71,7 @@ MN03 IP:24860 MN_PrivKey Tx_Hash Output_Index
 
 Here IP and port Same for all MN.
 
-MN0 is your main_node MN which you create with <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN.sh">CNOTE-MN.sh</a> script.
+MN0 is your main_node MN which you create with <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN-v2.sh">CNOTE-MN-v2.sh</a> script.
 
 MN01, MN02, MN03 is your masternode which you create with multimn.
 
@@ -86,7 +86,7 @@ startmasternode alias false MN03
 
 Now StartMasternode in VPS with Service:
 
-`systemctl start cnote` (Start your MN which is create with main_node <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN.sh">CNOTE-MN.sh</a> script)
+`systemctl start cnote` (Start your MN which is create with main_node <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN-v2.sh">CNOTE-MN-v2.sh</a> script)
 
 Below 3 MN which is create with `multimn` script.
 ```
