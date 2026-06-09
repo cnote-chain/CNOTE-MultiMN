@@ -2,14 +2,14 @@
 
 A script which is easily create Multiple Masternodes of the same coin in the same VPS.
 
-First of all you have to start one masternode using <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN-v2.sh">CNOTE-MN-v2.sh</a> script that is your MainNode.
+First of all you have to start one masternode using <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN.sh">CNOTE-MN.sh</a> script that is your MainNode.
 
-# Guide of use CNOTE-MN-v2.sh for MainNode:
+# Guide of use CNOTE-MN.sh for MainNode:
 
 ```
-wget -q https://raw.githubusercontent.com/cnote-chain/CNOTE-MN/main/CNOTE-MN-v2.sh
-sudo chmod +x CNOTE-MN-v2.sh
-./CNOTE-MN-v2.sh
+wget -q https://raw.githubusercontent.com/cnote-chain/CNOTE-MN/main/CNOTE-MN.sh
+sudo chmod +x CNOTE-MN.sh
+./CNOTE-MN.sh
 ```
 ***
 
@@ -71,7 +71,7 @@ MN03 IP:24860 MN_PrivKey Tx_Hash Output_Index
 
 Here IP and port Same for all MN.
 
-MN0 is your main_node MN which you create with <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN-v2.sh">CNOTE-MN-v2.sh</a> script.
+MN0 is your main_node MN which you create with <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN.sh">CNOTE-MN.sh</a> script.
 
 MN01, MN02, MN03 is your masternode which you create with multimn.
 
@@ -86,7 +86,7 @@ startmasternode alias false MN03
 
 Now StartMasternode in VPS with Service:
 
-`systemctl start cnote` (Start your MN which is create with main_node <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN-v2.sh">CNOTE-MN-v2.sh</a> script)
+`systemctl start cnote` (Start your MN which is create with main_node <a href="https://github.com/cnote-chain/CNOTE-MN/blob/main/CNOTE-MN.sh">CNOTE-MN.sh</a> script)
 
 Below 3 MN which is create with `multimn` script.
 ```
@@ -99,13 +99,13 @@ That's all now your MN start.
 
 ***
 
-# Guide to Update existing Nodes (v1 ➜ v2):
+# Guide to Update existing Nodes :
 
-If you already have masternodes running on the old **v1** version, you can move all of them (the MainNode and every dupe created with `multimn`) to **v2** with the steps below.
+If you already have masternodes running on the old **v1** version, you can move all of them (the MainNode and every dupe created with `multimn`) to **v2.0.1** with the steps below.
 
-**Important:** The `CNOTE-MN-v2.sh` script is **not** a gentle in-place updater. When run on a server it performs a **clean reinstall of the MainNode**:
+**Important:** The `CNOTE-MN.sh` script is **not** a gentle in-place updater. When run on a server it performs a **clean reinstall of the MainNode**:
 
-- it stops the old daemon and removes the old binaries from `/usr/local/bin/`, then installs the v2.0.0 daemon (this is good — every dupe shares this binary, so all nodes get the v2 daemon),
+- it stops the old daemon and removes the old binaries from `/usr/local/bin/`, then installs the v2.0.1 daemon (this is good — every dupe shares this binary, so all nodes get the v2.0.1 daemon),
 - it **regenerates** the MainNode config `~/.cnote/cnote.conf` (new RPC credentials and masternode settings),
 - it **deletes the MainNode blockchain** (`blocks chainstate sporks evodb`) and applies a fresh bootstrap.
 
@@ -128,9 +128,9 @@ systemctl stop cnote-3.service
 
 **Step 3 — Run the v2 script to update the MainNode:**
 ```
-wget -q https://raw.githubusercontent.com/cnote-chain/CNOTE-MN/main/CNOTE-MN-v2.sh
-sudo chmod +x CNOTE-MN-v2.sh
-./CNOTE-MN-v2.sh
+wget -q https://raw.githubusercontent.com/cnote-chain/CNOTE-MN/main/CNOTE-MN.sh
+sudo chmod +x CNOTE-MN.sh
+./CNOTE-MN.sh
 ```
 
 **Step 4 — Re-bootstrap the dupes** so they run the v2 chain format correctly:
